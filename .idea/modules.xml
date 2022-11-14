@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/account/account.iml" filepath="$PROJECT_DIR$/account/account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/adapter-input/adapter-input.iml" filepath="$PROJECT_DIR$/account/adapter-input/adapter-input.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/adapter-output/adapter-output.iml" filepath="$PROJECT_DIR$/account/adapter-output/adapter-output.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/api-input/api-input.iml" filepath="$PROJECT_DIR$/account/api-input/api-input.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/api-output/api-output.iml" filepath="$PROJECT_DIR$/account/api-output/api-output.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/application/application.iml" filepath="$PROJECT_DIR$/account/application/application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/common/common.iml" filepath="$PROJECT_DIR$/account/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/domain/domain.iml" filepath="$PROJECT_DIR$/account/domain/domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/account/launcher/launcher.iml" filepath="$PROJECT_DIR$/account/launcher/launcher.iml" />
+    </modules>
+  </component>
+</project>

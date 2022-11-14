@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/account/adapter-input/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/adapter-output/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/api-input/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/api-output/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/launcher/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/persitence-adapter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/account/web-adapter/src/main/java" charset="UTF-8" />
+  </component>
+</project>
