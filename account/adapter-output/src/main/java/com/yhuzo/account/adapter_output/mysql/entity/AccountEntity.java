@@ -18,8 +18,8 @@ import javax.persistence.Version;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "accounts")
-public class AccountJpaEntity {
+@Table(name = "hex-accounts")
+public class AccountEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,4 +27,13 @@ public class AccountJpaEntity {
 
     @Version
     private Long version;
+
+    private AmountEntity amount;
+
+    @Getter
+    @Setter
+    private static class AmountEntity {
+        private String currency;
+        private Double amount;
+    }
 }

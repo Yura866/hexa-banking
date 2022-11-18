@@ -30,7 +30,7 @@ public class Operation {
 
     @Getter
     @NonNull
-    Instant timestamp;
+    Instant createdAt;
 
     @Getter
     @NonNull

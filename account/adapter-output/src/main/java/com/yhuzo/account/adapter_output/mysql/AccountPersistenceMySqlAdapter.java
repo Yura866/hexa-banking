@@ -1,7 +1,7 @@
 package com.yhuzo.account.adapter_output.mysql;
 
-import com.yhuzo.account.adapter_output.mysql.entity.AccountJpaEntity;
-import com.yhuzo.account.adapter_output.mysql.entity.OperationJpaEntity;
+import com.yhuzo.account.adapter_output.mysql.entity.AccountEntity;
+import com.yhuzo.account.adapter_output.mysql.entity.OperationEntity;
 import com.yhuzo.account.adapter_output.mysql.mapping.AccountMapper;
 import com.yhuzo.account.adapter_output.mysql.repository.AccountRepository;
 import com.yhuzo.account.adapter_output.mysql.repository.OperationRepository;
@@ -16,7 +16,7 @@ import java.time.Instant;
 import java.util.List;
 
 @RequiredArgsConstructor
-public class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccountStatePort {
+public class AccountPersistenceMySqlAdapter implements LoadAccountPort, UpdateAccountStatePort {
 
     private final AccountRepository accountRepository;
     private final OperationRepository operationRepository;
@@ -27,11 +27,11 @@ public class AccountPersistenceAdapter implements LoadAccountPort, UpdateAccount
             Account.AccountId accountId,
             Instant baselineDate) {
 
-        AccountJpaEntity account =
+        AccountEntity account =
                 accountRepository.findById(accountId.getValue())
                         .orElseThrow(() -> new ModelNotFoundException(Account.class, accountId.getValue()));
 
-        List<OperationJpaEntity> operations =
+        List<OperationEntity> operations =
                 operationRepository.findByOwnerSince(
                         accountId.getValue(),
                         baselineDate);

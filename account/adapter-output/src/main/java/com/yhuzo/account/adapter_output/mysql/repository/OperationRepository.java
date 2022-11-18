@@ -1,7 +1,7 @@
 package com.yhuzo.account.adapter_output.mysql.repository;
 
 
-import com.yhuzo.account.adapter_output.mysql.entity.OperationJpaEntity;
+import com.yhuzo.account.adapter_output.mysql.entity.OperationEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -9,12 +9,12 @@ import org.springframework.data.repository.query.Param;
 import java.time.Instant;
 import java.util.List;
 
-public interface OperationRepository extends JpaRepository<OperationJpaEntity, Long> {
+public interface OperationRepository extends JpaRepository<OperationEntity, Long> {
 
     @Query("select a from OperationJpaEntity a " +
             "where a.ownerAccountId = :ownerAccountId " +
             "and a.timestamp >= :since")
-    List<OperationJpaEntity> findByOwnerSince(
+    List<OperationEntity> findByOwnerSince(
             @Param("ownerAccountId") Long ownerAccountId,
             @Param("since") Instant since);
 

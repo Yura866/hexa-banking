@@ -10,20 +10,20 @@ import java.util.Comparator;
 import java.util.List;
 
 public class OperationsHolder {
-    private List<Operation> operations;
+    private final List<Operation> operations;
 
     public Instant getStartTimestamp() {
         return operations.stream()
-                .min(Comparator.comparing(Operation::getTimestamp))
+                .min(Comparator.comparing(Operation::getCreatedAt))
                 .orElseThrow(IllegalStateException::new)
-                .getTimestamp();
+                .getCreatedAt();
     }
 
     public Instant getEndTimestamp() {
         return operations.stream()
-                .max(Comparator.comparing(Operation::getTimestamp))
+                .max(Comparator.comparing(Operation::getCreatedAt))
                 .orElseThrow(IllegalStateException::new)
-                .getTimestamp();
+                .getCreatedAt();
     }
 
     public Money calculateBalance(Account.AccountId accountId) {

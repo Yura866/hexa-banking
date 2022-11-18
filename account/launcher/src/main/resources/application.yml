@@ -1,0 +1,11 @@
+server.port: 8082
+
+spring:
+  data.mongodb.uri: mongodb://localhost:27017/hex-account
+
+logging:
+  level:
+    com.yhuzo: DEBUG
+
+kafka:
+  bootstrap-servers: 127.0.0.1:9092

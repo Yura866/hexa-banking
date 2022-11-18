@@ -23,7 +23,7 @@ public class Account {
                 .ownerAccountId(this.id)
                 .sourceAccountId(sourceAccountId)
                 .targetAccountId(this.id)
-                .timestamp(Instant.now())
+                .createdAt(Instant.now())
                 .money(money)
                 .build();
         this.operations.addOperation(deposit);
@@ -40,7 +40,7 @@ public class Account {
                 .ownerAccountId(this.id)
                 .sourceAccountId(this.id)
                 .targetAccountId(targetAccountId)
-                .timestamp(Instant.now())
+                .createdAt(Instant.now())
                 .money(money)
                 .build();
         this.operations.addOperation(withdrawal);

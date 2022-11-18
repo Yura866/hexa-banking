@@ -1,7 +1,7 @@
-package com.yhuzo.account.adapter_output.mysql.mapping;
+package com.yhuzo.account.adapter_output.mongodb.mapper;
 
-import com.yhuzo.account.adapter_output.mysql.entity.AccountEntity;
-import com.yhuzo.account.adapter_output.mysql.entity.OperationEntity;
+import com.yhuzo.account.adapter_output.mongodb.document.AccountDoc;
+import com.yhuzo.account.adapter_output.mongodb.document.OperationDoc;
 import com.yhuzo.account.domain.model.Account;
 import com.yhuzo.account.domain.model.Money;
 import com.yhuzo.account.domain.model.Operation;
@@ -10,11 +10,11 @@ import com.yhuzo.account.domain.model.OperationsHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccountMapper {
+public class AccountDocMapper {
 
-    public Account mapToDomainEntity(
-            AccountEntity account,
-            List<OperationEntity> operations,
+    public Account mapToDomain(
+            AccountDoc account,
+            List<OperationDoc> operations,
             Double withdrawalBalance,
             Double depositBalance) {
 
@@ -30,26 +30,26 @@ public class AccountMapper {
 
     }
 
-    OperationsHolder mapToOperationHolder(List<OperationEntity> operations) {
+    OperationsHolder mapToOperationHolder(List<OperationDoc> operations) {
         List<Operation> mappedOperations = new ArrayList<>();
 
-        for (OperationEntity operation : operations) {
+        for (OperationDoc doc : operations) {
             mappedOperations.add(
                     Operation.builder()
-                            .id(Operation.OperationId.of(operation.getId()))
-                            .ownerAccountId(Account.AccountId.of(operation.getOwnerAccountId()))
-                            .sourceAccountId(Account.AccountId.of(operation.getSourceAccountId()))
-                            .targetAccountId(Account.AccountId.of(operation.getTargetAccountId()))
-                            .createdAt(operation.getTimestamp())
-                            .money(Money.of(operation.getAmount()))
+                            .id(Operation.OperationId.of(doc.getId()))
+                            .ownerAccountId(Account.AccountId.of(doc.getOwnerAccountId()))
+                            .sourceAccountId(Account.AccountId.of(doc.getSourceAccountId()))
+                            .targetAccountId(Account.AccountId.of(doc.getTargetAccountId()))
+                            .createdAt(doc.getCreatedAt())
+                            .money(Money.of(doc.getAmount()))
                             .build());
         }
 
         return new OperationsHolder(mappedOperations);
     }
 
-    public OperationEntity mapToJpaEntity(Operation operation) {
-        return new OperationEntity(
+    public OperationDoc mapToDoc(Operation operation) {
+        return new OperationDoc(
                 operation.getId() == null ? null : operation.getId().getValue(),
                 operation.getCreatedAt(),
                 operation.getOwnerAccountId().getValue(),

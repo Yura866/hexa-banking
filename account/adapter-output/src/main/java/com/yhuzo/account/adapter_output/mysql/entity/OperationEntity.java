@@ -21,7 +21,7 @@ import java.time.Instant;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "operations")
-public class OperationJpaEntity {
+public class OperationEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

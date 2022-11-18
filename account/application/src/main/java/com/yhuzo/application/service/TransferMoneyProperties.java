@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 @NoArgsConstructor
 public class TransferMoneyProperties {
 
-    @Value("${account.transfer.threshold.max:${ACCOUNT.TRANSFER.THRESHOLD.MAX:1000}}")
-    Long maximumTransferThreshold = 1000L;
+    @Value("${account.transfer.threshold.max:${ACCOUNT.TRANSFER.THRESHOLD.MAX:10000}}")
+    Long maximumTransferThreshold = 10000L;
 
 }
